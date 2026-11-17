@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" id="htmlRoot">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Academy | Learning Dashboard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+
+  <div class="app-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a class="brand" href="index.html">
+          <span class="brand-icon">✳</span>
+          <span><b>AI</b> Academy</span>
+        </a>
+        <button class="close-sidebar" id="closeSidebar" aria-label="Close menu">×</button>
+      </div>
+
+      <nav class="side-nav">
+        <button type="button" class="nav-item active" data-view="curriculumView">
+          <i class="fa-solid fa-layer-group"></i>
+          <span data-i18n="navModules">5 Modules (15 Lessons)</span>
+        </button>
+        <button type="button" class="nav-item" data-view="lessonView" id="navCurrentLesson">
+          <i class="fa-solid fa-book-open-reader"></i>
+          <span data-i18n="navStudy">Study & Exam Room</span>
+        </button>
+        <button type="button" class="nav-item" data-view="certificateView" id="navCertificate">
+          <i class="fa-solid fa-award"></i>
+          <span data-i18n="navCert">Final Certificate</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-card">
+        <div class="mini-bot">🤖</div>
+        <h4 data-i18n="ruleTitle">Mastery Rule: 70%+</h4>
+        <p data-i18n="ruleDesc">Score at least 7/10 (70%) on each lesson's exam to unlock the next lesson.</p>
+      </div>
+
+      <a href="index.html" class="logout-link">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        <span data-i18n="backHome">Back to Home</span>
+      </a>
+    </aside>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+      <!-- Topbar -->
+      <header class="topbar">
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="welcome-banner">
+          <span class="eyebrow" data-i18n="trackBadge">✦ AI MASTERY TRACK • 5 MODULES</span>
+          <h1><span data-i18n="welcomeWord">Welcome,</span> <span class="gradient-text" id="studentName">Student</span> 👋</h1>
+        </div>
+
+        <div class="user-actions">
+          <!-- زرار تبديل اللغة عربي / إنجليزي -->
+          <button type="button" class="lang-toggle-btn" id="langToggleBtn" title="Switch Language">
+            <i class="fa-solid fa-language"></i>
+            <span id="langBtnLabel">عربي</span>
+          </button>
+
+          <div class="streak-pill">
+            <i class="fa-solid fa-chart-line"></i>
+            <span id="headerPercent">0%</span>
+          </div>
+          <div class="profile-chip">
+            <div class="avatar">AI</div>
+            <div class="profile-info">
+              <strong id="profileName">Student</strong>
+              <small id="unlockedCountLabel">1 / 15 Unlocked</small>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- VIEW 1: CURRICULUM OVERVIEW (5 MODULES) -->
+      <main id="curriculumView" class="view-section active">
+        <section class="progress-banner">
+          <div class="progress-head">
+            <div>
+              <h2 data-i18n="overallProgress">Your Overall Course Progress</h2>
+              <p id="nextStepText">Start Lesson 1 to begin your AI journey.</p>
+            </div>
+            <span class="progress-badge" id="progressBadge">0 / 15 Passed (0%)</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
+          </div>
+        </section>
+
+        <div class="modules-grid" id="modulesContainer"></div>
+      </main>
+
+      <!-- VIEW 2: LESSON STUDY + 10-QUESTION EXAM -->
+      <main id="lessonView" class="view-section">
+        <div class="lesson-topbar">
+          <button type="button" class="back-btn" id="backToModulesBtn">
+            <i class="fa-solid fa-arrow-left"></i> <span data-i18n="backModules">Back to All Modules</span>
+          </button>
+          <span class="module-pill" id="activeModuleTag">Module 1 • Lesson 1</span>
+        </div>
+
+        <article class="study-card">
+          <div class="study-header">
+            <div class="study-icon" id="activeLessonIcon">🤖</div>
+            <div>
+              <h2 id="activeLessonTitle">Lesson Title</h2>
+              <p id="activeLessonSubtitle">Subtitle</p>
+            </div>
+          </div>
+
+          <div class="study-body" id="activeLessonContent"></div>
+
+          <div class="study-footer">
+            <div class="exam-notice">
+              <i class="fa-solid fa-circle-info"></i>
+              <span data-i18n="examNotice">Finished studying? Complete the 10-question exam below (Minimum passing score: 70%).</span>
+            </div>
+            <button type="button" class="primary-btn" id="scrollToExamBtn">
+              <span data-i18n="startExamBtn">Start 10-Question Exam</span> <i class="fa-solid fa-arrow-down"></i>
+            </button>
+          </div>
+        </article>
+
+        <!-- 10-Question Exam Card -->
+        <section class="exam-card" id="examSection">
+          <div class="exam-header">
+            <div>
+              <span class="eyebrow" data-i18n="examBadge">LESSON ASSESSMENT • 10 QUESTIONS</span>
+              <h3 data-i18n="examHeading">Lesson Mastery Exam</h3>
+            </div>
+            <div class="pass-rule-badge" data-i18n="passRule">Pass Score: 70% (7/10)</div>
+          </div>
+
+          <form id="lessonExamForm" class="questions-list"></form>
+
+          <div class="exam-actions">
+            <button type="button" class="primary-btn submit-exam-btn" id="submitExamBtn">
+              <i class="fa-solid fa-paper-plane"></i> <span data-i18n="submitExam">Submit Exam & Check Score</span>
+            </button>
+          </div>
+
+          <div class="exam-result-box" id="examResultBox" hidden>
+            <div class="result-icon" id="resultIcon">🎉</div>
+            <h3 id="resultTitle">Result Title</h3>
+            <p id="resultScoreText">You scored 8/10 (80%)</p>
+            <p id="resultMessage">Message</p>
+            <div class="result-buttons" id="resultButtons"></div>
+          </div>
+        </section>
+      </main>
+
+      <!-- VIEW 3: FINAL BIG CERTIFICATE -->
+      <main id="certificateView" class="view-section">
+        <div class="cert-locked-banner" id="certLockedBanner">
+          <div class="lock-circle"><i class="fa-solid fa-lock"></i></div>
+          <h2 data-i18n="certLockedTitle">Certificate Locked</h2>
+          <p data-i18n="certLockedDesc">Complete all 5 Modules (15 Lessons) with at least 70% on every exam to unlock your official AI Academy Certificate.</p>
+          <button type="button" class="primary-btn" id="goStudyBtn" data-i18n="continueStudy">Continue Studying</button>
+        </div>
+
+        <div class="big-certificate-wrapper" id="bigCertWrapper" hidden>
+          <div class="cert-controls">
+            <span class="eyebrow">🎓 OFFICIAL CREDENTIAL UNLOCKED</span>
+            <button type="button" class="primary-btn" onclick="window.print()">
+              <i class="fa-solid fa-print"></i> <span data-i18n="printCert">Print / Save as PDF</span>
+            </button>
+          </div>
+
+          <div class="big-certificate" id="printableCertificate" dir="ltr">
+            <div class="cert-border-inner">
+              <div class="cert-top-brand">
+                <span class="brand-icon">✳</span>
+                <span><b>AI</b> Academy</span>
+              </div>
+
+              <p class="cert-kicker">CERTIFICATE OF MASTERY</p>
+              <h1 class="cert-main-title">Artificial Intelligence Foundations</h1>
+              <p class="cert-presented">This prestigious certificate is proudly presented to</p>
+
+              <h2 class="cert-recipient" id="finalCertName">Student Name</h2>
+
+              <p class="cert-desc">
+                For successfully completing the comprehensive <strong>5-Module, 15-Lesson Curriculum</strong> in Artificial Intelligence, Machine Learning, AI Tools, Real-World Applications, and AI Ethics, achieving mastery across all 15 assessments.
+              </p>
+
+              <div class="cert-modules-summary">
+                <span>✓ Module 1: Intro to AI</span>
+                <span>✓ Module 2: How AI Works</span>
+                <span>✓ Module 3: AI Tools</span>
+                <span>✓ Module 4: Applications</span>
+                <span>✓ Module 5: Future of AI</span>
+              </div>
+
+              <div class="cert-footer-row">
+                <div class="cert-sign">
+                  <strong id="certDate">November 2026</strong>
+                  <span>Date of Completion</span>
+                </div>
+                <div class="cert-gold-medal">
+                  <i class="fa-solid fa-award"></i>
+                  <span>VERIFIED</span>
+                </div>
+                <div class="cert-sign">
+                  <strong class="signature-script">AI Academy Board</strong>
+                  <span>Program Director</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- CELEBRATION POPUP MODAL -->
+  <dialog class="celebration-dialog" id="moduleModal">
+    <div class="celebration-content">
+      <div class="celebration-illustration" id="modalIllustration">🚀</div>
+      <span class="eyebrow" id="modalBadge">MODULE 1 COMPLETED!</span>
+      <h2 id="modalTitle">لقد أتممت الوحدة الأولى بنجاح!</h2>
+      <p id="modalText">عمل رائع!</p>
+      <button type="button" class="primary-btn modal-cta" id="modalNextBtn">
+        Continue <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </dialog>
+
+  <script src="lessons-data.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>

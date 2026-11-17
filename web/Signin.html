@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Academy | Create Your Account</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Dancing+Script:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
+  <link rel="stylesheet" href="Signin.css">
+</head>
+
+<body>
+  <main class="page-shell">
+
+    <!-- Header -->
+    <header class="topbar">
+      <a href="index.html" class="brand">
+        <div class="brand-icon">
+          <i class="fa-solid fa-brain" style="font-size: 45px; display: grid; place-items: center; height: 100%;"></i>
+        </div>
+        <div>
+          <h1>AI Academy</h1>
+          <p>Learn • Build • Shape Your Future</p>
+        </div>
+      </a>
+
+      <div class="top-login">
+        <span>Already have an account?</span>
+        <a href="login.html" class="login-link">
+          Login <span>→</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Layout -->
+    <section class="signup-layout">
+
+      <!-- Glass Form Card -->
+      <section class="form-card">
+        <div class="welcome">
+          <div class="welcome-icon">
+            <i class="fa-solid fa-user-plus" style="font-size: 24px; display: grid; place-items: center; height: 100%;"></i>
+          </div>
+
+          <div>
+            <p class="script-title">Create Your</p>
+            <h2>AI Academy Account</h2>
+            <p class="intro">
+              Join our community and start your journey<br class="desktop-break">
+              to master Artificial Intelligence. <span class="sparkle">✦</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="auth-tabs">
+          <a href="login.html" class="tab">Login</a>
+          <a href="Signin.html" class="tab active">Sign Up</a>
+        </div>
+
+        <!-- Form -->
+        <form id="signupForm">
+          <div class="input-box">
+            <i class="fa-regular fa-user" style="color: #5543b5; font-size: 20px;"></i>
+            <input type="text" id="fullName" placeholder="Full Name" autocomplete="name" required>
+          </div>
+
+          <div class="input-box">
+            <i class="fa-regular fa-envelope" style="color: #5543b5; font-size: 20px;"></i>
+            <input type="email" id="email" placeholder="Email Address" autocomplete="email" required>
+          </div>
+
+          <div class="input-box">
+            <i class="fa-solid fa-lock" style="color: #5543b5; font-size: 20px;"></i>
+            <input type="password" id="password" placeholder="Password" autocomplete="new-password" minlength="8" required>
+            <button type="button" class="toggle-password" data-target="password" aria-label="Show password">
+              <i class="fa-regular fa-eye-slash"></i>
+            </button>
+          </div>
+
+          <div class="input-box">
+            <i class="fa-solid fa-lock" style="color: #5543b5; font-size: 20px;"></i>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" autocomplete="new-password" minlength="8" required>
+            <button type="button" class="toggle-password" data-target="confirmPassword" aria-label="Show confirm password">
+              <i class="fa-regular fa-eye-slash"></i>
+            </button>
+          </div>
+
+          <div class="input-box">
+            <i class="fa-regular fa-calendar-days" style="color: #5543b5; font-size: 20px;"></i>
+            <input type="text" id="birthDate" placeholder="Date of Birth" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'">
+          </div>
+
+          <div class="input-box">
+            <i class="fa-solid fa-phone" style="color: #5543b5; font-size: 20px;"></i>
+            <input type="tel" id="phone" placeholder="Phone Number (Optional)" autocomplete="tel">
+          </div>
+
+          <label class="terms-row">
+            <input type="checkbox" id="terms" required>
+            <span class="custom-check">✓</span>
+            <span>
+              I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+            </span>
+          </label>
+
+          <button type="submit" class="create-btn">
+            <span>Create Account</span>
+            <span class="arrow">→</span>
+          </button>
+
+          <p class="form-message" id="formMessage" role="status"></p>
+        </form>
+
+        <!-- Social Login -->
+        <div class="divider"><span></span>or<span></span></div>
+        <p class="social-title">Sign up with social platforms</p>
+
+        <div class="social-buttons">
+          <button type="button" class="social-btn google" data-provider="google" aria-label="Google">G</button>
+          <button type="button" class="social-btn github" data-provider="github" aria-label="GitHub">
+            <i class="fa-brands fa-github" style="z-index:2; color:white; font-size:18px;"></i>
+          </button>
+          <button type="button" class="social-btn twitter" data-provider="twitter" aria-label="Twitter">
+            <i class="fa-brands fa-x-twitter" style="font-size: 22px; color: #111;"></i>
+          </button>
+        </div>
+
+        <!-- Security Note -->
+        <div class="security-note">
+          <span class="shield"><i class="fa-solid fa-shield-halved"></i></span>
+          <div>
+            <strong>Your data is safe with us</strong>
+            <p>We never share your information.</p>
+          </div>
+          <span class="secure-lock"><i class="fa-solid fa-lock"></i></span>
+          <span class="small-sparkle">✦</span>
+        </div>
+
+        <p class="mobile-login">
+          Already have an account? <a href="login.html">Login here</a>
+        </p>
+      </section>
+
+      <!-- Right Decorative AI Illustration (CSS Art) -->
+      <aside class="art-panel">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+
+        <div class="tech-card chip-card">
+          <div class="chip-symbol">AI</div>
+          <span>SMART TECH</span>
+        </div>
+        <div class="tech-card code-card">&lt;/&gt;</div>
+        <div class="tech-card chart-card">📊</div>
+        <div class="tech-card cap-card">🎓</div>
+        <div class="tech-card bulb-card">💡</div>
+
+        <span class="floating-star star-one">✦</span>
+        <span class="floating-star star-two">✧</span>
+        <span class="floating-star star-three">✦</span>
+        <span class="floating-star star-four">✧</span>
+
+        <div class="robot-scene">
+          <div class="robot-aura"></div>
+          <div class="robot">
+            <div class="headphones left-ear"></div>
+            <div class="headphones right-ear"></div>
+            <div class="robot-head">
+              <div class="robot-face">
+                <span class="eye"></span>
+                <span class="eye"></span>
+              </div>
+            </div>
+            <div class="robot-body">
+              <div class="robot-arm"></div>
+              <div class="robot-hand"></div>
+            </div>
+          </div>
+
+          <div class="laptop">
+            <span class="laptop-logo">✦</span>
+            <div class="laptop-base"></div>
+          </div>
+
+          <div class="book book-top"></div>
+          <div class="book book-bottom"></div>
+        </div>
+
+        <div class="slogan">
+          <span>Learn Smart</span>
+          <span>Build Future</span>
+          <div class="slogan-underline">♡</div>
+        </div>
+      </aside>
+
+    </section>
+
+    <footer class="page-footer">
+      © 2026 <span>AI Academy</span>. Learn · Build · Grow.
+    </footer>
+  </main>
+
+  <script type="module" src="Signin.js"></script>
+</body>
+</html>

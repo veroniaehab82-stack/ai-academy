@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Academy | Login</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,500;1,600&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+<div class="page-container">
+
+  <header class="navbar">
+    <a class="logo" href="index.html">
+      <div class="logo-icon">
+        <i class="fa-solid fa-brain"></i>
+      </div>
+      <div class="logo-text">
+        <h2>AI Academy</h2>
+        <span>Learn • Build • Shape Your Future</span>
+      </div>
+    </a>
+
+    <div class="top-nav-action">
+      <span>Don't have an account?</span>
+      <a href="Signin.html" class="nav-login-btn" style="text-decoration: none;">
+        Sign Up <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </header>
+
+  <main class="main-content">
+
+    <section class="login-card">
+      <div class="card-header">
+        <div class="welcome-title">
+          <span>👋</span>
+          <span class="welcome-script">Welcome</span>
+        </div>
+
+        <h1>to AI Academy</h1>
+        <p class="subtitle">
+          Your journey to mastering Artificial Intelligence
+          starts here ✧
+        </p>
+      </div>
+
+      <div class="toggle-tabs">
+        <button class="tab-btn active" id="tab-login" type="button">
+          Login
+        </button>
+        <button class="tab-btn" id="tab-signup" type="button" onclick="window.location.href='Signin.html'">
+          Sign Up
+        </button>
+      </div>
+
+      <form class="auth-form" id="authForm">
+
+        <div class="input-group">
+          <i class="fa-regular fa-envelope input-icon"></i>
+          <input
+            type="email"
+            id="emailInput"
+            placeholder="Email Address"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="input-group">
+          <i class="fa-solid fa-lock input-icon"></i>
+          <input
+            type="password"
+            id="passwordInput"
+            placeholder="Password"
+            minlength="6"
+            required
+          >
+          <button
+            type="button"
+            class="toggle-password"
+            id="togglePassword"
+            aria-label="Show password"
+          >
+            <i class="fa-regular fa-eye-slash"></i>
+          </button>
+        </div>
+
+        <div class="form-options">
+          <label class="remember-me">
+            <input type="checkbox" checked>
+            Remember me
+          </label>
+
+          <a href="#" class="forgot-link" id="forgotLink">
+            Forgot Password?
+          </a>
+        </div>
+
+        <button type="submit" class="primary-submit-btn" id="submitBtn">
+          Login <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <p class="form-message" id="formMessage"></p>
+      </form>
+
+      <div class="divider"><span>or</span></div>
+
+      <div class="social-login-section">
+        <p>Login with social platforms</p>
+
+        <div class="social-icons">
+          <button type="button" class="social-btn google" data-provider="google" aria-label="Google">
+            <i class="fa-brands fa-google"></i>
+          </button>
+          <button type="button" class="social-btn github" data-provider="github" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </button>
+          <button type="button" class="social-btn twitter" data-provider="twitter" aria-label="Twitter" style="color: #111;">
+            <i class="fa-brands fa-x-twitter"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="card-footer-action">
+        <i class="fa-solid fa-user-plus"></i>
+        <span id="footerPrompt">Don't have an account?</span>
+        <a href="Signin.html" id="footerLink">
+          Create one here <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Robot illustration: embedded SVG, no image file needed -->
+    <section class="visual-side">
+
+      <div class="robot-scene">
+
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+
+        <div class="tech-icon brain-icon">
+          <i class="fa-solid fa-brain"></i>
+        </div>
+        <div class="tech-icon chip-icon">
+          <i class="fa-solid fa-microchip"></i>
+        </div>
+        <div class="tech-icon code-icon">
+          <i class="fa-solid fa-code"></i>
+        </div>
+        <div class="tech-icon network-icon">
+          <i class="fa-solid fa-diagram-project"></i>
+        </div>
+        <div class="sparkle sparkle-one">✦</div>
+        <div class="sparkle sparkle-two">✧</div>
+        <div class="sparkle sparkle-three">✦</div>
+
+        <svg class="robot-art"
+             viewBox="0 0 440 440"
+             xmlns="http://www.w3.org/2000/svg"
+             role="img"
+             aria-label="Cute AI robot sitting on a stack of books">
+
+          <defs>
+            <linearGradient id="robotBody" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#FFFFFF"/>
+              <stop offset="100%" stop-color="#DCD3FF"/>
+            </linearGradient>
+            <linearGradient id="robotHead" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#FFFFFF"/>
+              <stop offset="100%" stop-color="#C9B9FF"/>
+            </linearGradient>
+            <linearGradient id="robotScreen" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#34205F"/>
+              <stop offset="100%" stop-color="#6844BD"/>
+            </linearGradient>
+            <linearGradient id="bookPurple" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#A486FF"/>
+              <stop offset="100%" stop-color="#6843D0"/>
+            </linearGradient>
+            <linearGradient id="bookDark" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#6E51C5"/>
+              <stop offset="100%" stop-color="#38216F"/>
+            </linearGradient>
+            <filter id="softShadow" x="-30%" y="-30%" width="160%" height="180%">
+              <feDropShadow dx="0" dy="9" stdDeviation="8"
+                            flood-color="#6C4BC4" flood-opacity=".2"/>
+            </filter>
+          </defs>
+
+          <!-- Soft glow -->
+          <ellipse cx="220" cy="385" rx="155" ry="20"
+                   fill="#B9A3F7" opacity=".22"/>
+
+          <!-- Back book -->
+          <g filter="url(#softShadow)">
+            <path d="M76 311 Q76 299 89 299 H354
+                     Q367 299 367 312 V345 H76 Z"
+                  fill="#C5B6F7"/>
+            <path d="M76 311 H367 V322 H76 Z" fill="#F7F1FF"/>
+            <path d="M76 322 H367 V345 H76 Z" fill="#8D72DC"/>
+          </g>
+
+          <!-- Bottom book -->
+          <g filter="url(#softShadow)">
+            <path d="M61 350 Q61 339 74 339 H359
+                     Q374 339 374 351 V379 H61 Z"
+                  fill="url(#bookDark)"/>
+            <path d="M61 350 H374 V360 H61 Z" fill="#F9F2FF"/>
+            <path d="M61 360 H374 V379 H61 Z" fill="#55349F"/>
+            <text x="218" y="373" fill="#FFFFFF" font-size="15"
+                  text-anchor="middle" font-family="Georgia">
+              Data Science
+            </text>
+          </g>
+
+          <!-- Middle book -->
+          <g filter="url(#softShadow)">
+            <path d="M82 315 Q82 303 95 303 H348
+                     Q361 303 361 315 V344 H82 Z"
+                  fill="url(#bookPurple)"/>
+            <path d="M82 315 H361 V325 H82 Z" fill="#FFF9FF"/>
+            <path d="M82 325 H361 V344 H82 Z" fill="#7B5BCC"/>
+            <text x="220" y="339" fill="#FFFFFF" font-size="16"
+                  text-anchor="middle" font-family="Georgia">
+              Machine Learning
+            </text>
+          </g>
+
+          <!-- Robot legs -->
+          <path d="M172 268 Q155 287 169 313
+                   Q177 325 196 319 L211 302 L207 274 Z"
+                fill="url(#robotBody)" stroke="#B9A6F0" stroke-width="3"/>
+          <path d="M250 269 Q273 280 271 304
+                   Q270 320 251 319 L232 302 L236 274 Z"
+                fill="url(#robotBody)" stroke="#B9A6F0" stroke-width="3"/>
+
+          <!-- Shoes -->
+          <ellipse cx="183" cy="316" rx="27" ry="13"
+                   fill="#FFFFFF" stroke="#B8A4F0" stroke-width="3"/>
+          <ellipse cx="253" cy="316" rx="27" ry="13"
+                   fill="#FFFFFF" stroke="#B8A4F0" stroke-width="3"/>
+
+          <!-- Robot body -->
+          <g filter="url(#softShadow)">
+            <path d="M159 209 Q159 187 183 184
+                     H258 Q282 187 282 211
+                     L274 270 Q271 286 253 287
+                     H185 Q167 286 164 270 Z"
+                  fill="url(#robotBody)" stroke="#B9A7ED" stroke-width="3"/>
+            <circle cx="164" cy="228" r="18"
+                    fill="#F5F1FF" stroke="#B9A7ED" stroke-width="3"/>
+            <circle cx="277" cy="228" r="18"
+                    fill="#F5F1FF" stroke="#B9A7ED" stroke-width="3"/>
+            <path d="M174 216 Q155 235 173 253"
+                  fill="none" stroke="#C7B8F4" stroke-width="5"
+                  stroke-linecap="round"/>
+            <path d="M268 216 Q287 235 269 253"
+                  fill="none" stroke="#C7B8F4" stroke-width="5"
+                  stroke-linecap="round"/>
+          </g>
+
+          <!-- Book held by robot -->
+          <g transform="rotate(-5 220 246)" filter="url(#softShadow)">
+            <path d="M176 220 Q199 210 220 226
+                     Q241 210 264 220 V269
+                     Q241 260 220 276
+                     Q199 260 176 269 Z"
+                  fill="#A68AF4" stroke="#6E50C4" stroke-width="2"/>
+            <path d="M220 226 V275" stroke="#F8F3FF" stroke-width="2"/>
+            <path d="M183 230 Q199 224 212 232"
+                  stroke="#EDE4FF" stroke-width="2" fill="none"/>
+            <path d="M228 232 Q242 224 257 230"
+                  stroke="#EDE4FF" stroke-width="2" fill="none"/>
+          </g>
+
+          <!-- Arms -->
+          <path d="M165 224 Q146 232 158 250
+                   L181 260 L193 246 L177 228 Z"
+                fill="url(#robotBody)" stroke="#B9A7ED" stroke-width="3"/>
+          <path d="M276 224 Q295 232 283 250
+                   L260 260 L248 246 L264 228 Z"
+                fill="url(#robotBody)" stroke="#B9A7ED" stroke-width="3"/>
+
+          <!-- Robot head -->
+          <g filter="url(#softShadow)">
+            <rect x="145" y="91" width="150" height="124" rx="42"
+                  fill="url(#robotHead)" stroke="#A991EB" stroke-width="4"/>
+            <rect x="158" y="105" width="124" height="94" rx="32"
+                  fill="url(#robotScreen)"/>
+            <path d="M174 119 Q200 105 222 117"
+                  stroke="#FFFFFF" stroke-opacity=".35" stroke-width="4"
+                  fill="none" stroke-linecap="round"/>
+
+            <!-- Happy eyes -->
+            <path d="M184 148 Q194 131 204 148"
+                  stroke="#FFFFFF" stroke-width="6" fill="none"
+                  stroke-linecap="round"/>
+            <path d="M236 148 Q246 131 256 148"
+                  stroke="#FFFFFF" stroke-width="6" fill="none"
+                  stroke-linecap="round"/>
+            <path d="M202 168 Q220 183 238 168"
+                  stroke="#D5C5FF" stroke-width="4" fill="none"
+                  stroke-linecap="round"/>
+
+            <!-- Headphones -->
+            <path d="M143 147 Q132 94 185 80
+                     Q220 67 255 81 Q306 98 297 147"
+                  stroke="#7954D7" stroke-width="12"
+                  fill="none" stroke-linecap="round"/>
+            <rect x="134" y="132" width="22" height="43" rx="10"
+                  fill="#A98AF8" stroke="#FFFFFF" stroke-width="3"/>
+            <rect x="284" y="132" width="22" height="43" rx="10"
+                  fill="#A98AF8" stroke="#FFFFFF" stroke-width="3"/>
+            <circle cx="145" cy="153" r="5" fill="#FFFFFF"/>
+            <circle cx="295" cy="153" r="5" fill="#FFFFFF"/>
+          </g>
+
+          <!-- Small antenna -->
+          <path d="M220 91 V72" stroke="#9675E8" stroke-width="5"
+                stroke-linecap="round"/>
+          <circle cx="220" cy="64" r="10" fill="#A78AF5"
+                  stroke="#FFFFFF" stroke-width="3"/>
+          <circle cx="217" cy="61" r="3" fill="#FFFFFF"/>
+
+          <!-- Tiny stars -->
+          <path d="M104 165 L108 176 L119 180 L108 184 L104 195
+                   L100 184 L89 180 L100 176 Z"
+                fill="#B29AF8"/>
+          <path d="M329 211 L332 219 L340 222 L332 225 L329 233
+                   L326 225 L318 222 L326 219 Z"
+                fill="#C4B2FF"/>
+          <circle cx="326" cy="105" r="4" fill="#FFFFFF"/>
+          <circle cx="112" cy="265" r="4" fill="#A98BF6"/>
+        </svg>
+
+        <div class="plant">
+          <span></span><span></span><span></span>
+          <div class="plant-pot"></div>
+        </div>
+
+        <div class="laptop">
+          <i class="fa-solid fa-code"></i>
+        </div>
+
+      </div>
+
+      <div class="inspiring-quote">
+        <p>Better Skills</p>
+        <p>Brighter Future</p>
+        <div class="quote-heart">
+          <span></span>
+          <i class="fa-regular fa-heart"></i>
+          <span></span>
+        </div>
+      </div>
+
+    </section>
+  </main>
+</div>
+
+<script type="module" src="login.js"></script>
+</body>
+</html>
